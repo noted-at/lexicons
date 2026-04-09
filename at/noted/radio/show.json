@@ -1,0 +1,58 @@
+{
+    "$type": "com.atproto.lexicon.schema",
+    "id": "at.noted.radio.show",
+    "description": "A radio show",
+    "lexicon": 1,
+    "defs": {
+        "main": {
+            "type": "record",
+            "key": "any",
+            "description": "Record representing a single show",
+            "record": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "startTime",
+                    "createdAt"
+                ],
+                "properties": {
+                    "hostUris": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "at-uri"
+                        }
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "imageUri": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "programUri": {
+                        "type": "string",
+                        "format": "at-uri"
+                    },
+                    "startTime": {
+                        "type": "string",
+                        "format": "datetime"
+                    },
+                    "tagline": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    }
+                }
+            }
+        }
+    }
+}

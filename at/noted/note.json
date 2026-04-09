@@ -1,0 +1,35 @@
+{
+  "$type": "com.atproto.lexicon.schema",
+  "id": "at.noted.note",
+  "description": "A brief note",
+  "lexicon": 1,
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "description": "Record representing a single note",
+      "record": {
+        "type": "object",
+        "required": [
+          "title",
+          "body",
+          "createdAt"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "body": {
+            "type": "string",
+            "maxLength": 5000
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          }
+        }
+      }
+    }
+  }
+}

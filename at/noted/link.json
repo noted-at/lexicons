@@ -1,0 +1,45 @@
+{
+    "$type": "com.atproto.lexicon.schema",
+    "id": "at.noted.link",
+    "description": "A link to a resource on the web",
+    "lexicon": 1,
+    "defs": {
+        "main": {
+            "type": "record",
+            "key": "tid",
+            "description": "Record representing a single link",
+            "record": {
+                "type": "object",
+                "required": [
+                    "url",
+                    "createdAt"
+                ],
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "title": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "description": {
+                        "type": "string",
+                        "maxLength": 5000
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "maxLength": 500
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    }
+                }
+            }
+        }
+    }
+}

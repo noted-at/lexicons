@@ -1,0 +1,42 @@
+{
+    "$type": "com.atproto.lexicon.schema",
+    "id": "at.noted.radio.host",
+    "description": "A host of a radio show",
+    "lexicon": 1,
+    "defs": {
+        "main": {
+            "type": "record",
+            "key": "any",
+            "description": "Record representing a single host",
+            "record": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "createdAt"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "imageUri": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "thumbnailUri": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    }
+                }
+            }
+        }
+    }
+}

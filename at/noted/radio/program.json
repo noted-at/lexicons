@@ -1,0 +1,53 @@
+{
+    "$type": "com.atproto.lexicon.schema",
+    "id": "at.noted.radio.program",
+    "description": "A radio program",
+    "lexicon": 1,
+    "defs": {
+        "main": {
+            "type": "record",
+            "key": "any",
+            "description": "Record representing a single program",
+            "record": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "createdAt"
+                ],
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "maxLength": 5000
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "imageUri": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "maxLength": 500
+                        }
+                    },
+                    "thumbnailUri": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    }
+                }
+            }
+        }
+    }
+}

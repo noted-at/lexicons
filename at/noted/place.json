@@ -1,0 +1,102 @@
+{
+    "$type": "com.atproto.lexicon.schema",
+    "id": "at.noted.place",
+    "description": "A place with a review",
+    "lexicon": 1,
+    "defs": {
+        "main": {
+            "type": "record",
+            "key": "tid",
+            "description": "Record representing a single place",
+            "record": {
+                "type": "object",
+                "required": [
+                    "geometry",
+                    "createdAt"
+                ],
+                "properties": {
+                    "geometry": {
+                        "type": "object",
+                        "properties": {
+                            "coordinates": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer"
+                                }
+                            },
+                            "type": {
+                                "type": "string",
+                                "maxLength": 50
+                            }
+                        }
+                    },
+                    "location": {
+                        "type": "object",
+                        "properties": {
+                            "address": {
+                                "type": "string",
+                                "maxLength": 500
+                            },
+                            "countryCode": {
+                                "type": "string",
+                                "maxLength": 10
+                            },
+                            "name": {
+                                "type": "string",
+                                "maxLength": 500
+                            }
+                        }
+                    },
+                    "uri": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "rating": {
+                        "type": "integer"
+                    },
+                    "review": {
+                        "type": "string",
+                        "maxLength": 5000
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "maxLength": 50
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    },
+                    "questions": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "question": {
+                                    "type": "string",
+                                    "maxLength": 500
+                                },
+                                "rating": {
+                                    "type": "integer"
+                                },
+                                "selectedOption": {
+                                    "type": "string",
+                                    "maxLength": 50
+                                },
+                                "selectedOptions": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "maxLength": 50
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
