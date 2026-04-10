@@ -12,7 +12,6 @@
                 "type": "object",
                 "required": [
                     "id",
-                    "name",
                     "startTime",
                     "createdAt"
                 ],
@@ -30,10 +29,6 @@
                     "imageUri": {
                         "type": "string",
                         "format": "uri"
-                    },
-                    "name": {
-                        "type": "string",
-                        "maxLength": 500
                     },
                     "programUri": {
                         "type": "string",
